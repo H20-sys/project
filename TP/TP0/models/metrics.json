@@ -1,0 +1,31 @@
+{
+  "main_metric": "mae",
+  "best": "ridge",
+  "results": {
+    "baseline": {
+      "mae": 70.271,
+      "rmse": 88.416,
+      "r2": -0.151
+    },
+    "ridge": {
+      "mae": 22.623,
+      "rmse": 28.545,
+      "r2": 0.88
+    },
+    "arbre_de_decision": {
+      "mae": 42.01,
+      "rmse": 54.766,
+      "r2": 0.558
+    },
+    "foret_aleatoire": {
+      "mae": 31.825,
+      "rmse": 41.647,
+      "r2": 0.745
+    },
+    "gradient_boosting": {
+      "mae": 39.015,
+      "rmse": 51.049,
+      "r2": 0.616
+    }
+  }
+}
