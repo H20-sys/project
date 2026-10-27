@@ -1,2 +1,0 @@
-\# TP0 : MaintAI
-
