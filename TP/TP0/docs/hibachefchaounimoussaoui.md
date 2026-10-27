@@ -1,6 +1,6 @@
 # Compte rendu individuel — Projet à compléter
 
-Nom : So
+Nom : Hiba Chefchaouni Moussaoui
 Date : 27/10/2026
 Projet : Prédiction des pannes de machines
 
