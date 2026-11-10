@@ -1,0 +1,2 @@
+ temperature_c: float = Field(e=40, le=150)
+    vibration: float = Field(e=0, le=10)
