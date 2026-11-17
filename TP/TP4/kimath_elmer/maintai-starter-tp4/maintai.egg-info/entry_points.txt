@@ -1,0 +1,2 @@
+[console_scripts]
+maintai-predict = maintai.cli:main
