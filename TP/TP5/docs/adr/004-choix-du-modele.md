@@ -31,8 +31,8 @@ jeu de test : 1000 relevés dont 136 pannes). Baseline « jamais de panne » : r
 **Régression logistique, C = 1.0, seuil d'alerte 0.2** (option C).
 
 - Run retenu : `612c5b17cf2b4808900bdb562d7503e0`
-- Données : `data_md5` = `73e0b7cb3c6f795c70c3ddf970b99c15` (v1, 5000 relevés, commit `656ead7` « Données v1 »)
-- Pour retrouver ces données : `git checkout 656ead7 -- data/sensors.csv.dvc` puis `dvc checkout` (ou `dvc pull` sur un autre PC)
+- Données : `data_md5` = `73e0b7cb3c6f795c70c3ddf970b99c15` (v1, 5000 relevés, commit `f90df13` « Données v1 »)
+- Pour retrouver ces données : `git checkout f90df13 -- data/sensors.csv.dvc` puis `dvc checkout` (ou `dvc pull` sur un autre PC)
 - Versions exactes : le `requirements.txt` du modèle dans MLflow (scikit-learn==1.8.0, numpy==2.4.4, pandas==3.0.2)
 
 Raison principale : c'est le meilleur recall mesuré (0.838) ; le seul concurrent proche (forêt, seuil 0.2) détecte une

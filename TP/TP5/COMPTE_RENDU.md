@@ -157,13 +157,13 @@ data\sensors.csv.dvc:
 
 | Version | Commit Git (`git log --oneline`) | md5 (8 premiers caractères) | Nombre de lignes |
 |---|---|---|---|
-| v1 | `656ead7` Données v1 | `73e0b7cb` | 5000 |
-| v2 | `11181c9` Données v2 | `93fdeef2` | 8000 |
+| v1 | `f90df13` Données v1 | `73e0b7cb` | 5000 |
+| v2 | `cfa9616` Données v2 | `93fdeef2` | 8000 |
 
 Revenez à la v1 (`git checkout <commit> -- data/sensors.csv.dvc`, puis `dvc checkout`). Combien de lignes contient `data/sensors.csv` ? Puis revenez à la v2.
 
 ```
-> git checkout 656ead7 -- data/sensors.csv.dvc & dvc checkout
+> git checkout f90df13 -- data/sensors.csv.dvc & dvc checkout
 M       data\sensors.csv
 > python -c "import pandas as pd; print(len(pd.read_csv('data/sensors.csv')))"
 5000
@@ -189,6 +189,11 @@ DVC lit le md5 dans le reçu (`93fdeef2…`), télécharge le fichier depuis le 
 (`%USERPROFILE%\dvc-stockage`) dans le cache (`fetch`), puis le place dans `data/` (`checkout`). Le fichier revient avec
 8000 lignes et le même md5 (`93fdeef2cac1893c4f720c16457eea75`), et `dvc status` répond « Data and pipelines are up to
 date ». C'est ce que fait un coéquipier après `git clone` : le code vient de Git, les données du stockage.
+
+Vérifié dans un clone neuf du dépôt du groupe : après `dvc pull`, le cache ne contient que la v2. Revenir à la v1 avec
+`git checkout f90df13 -- data/sensors.csv.dvc` puis `dvc checkout` échoue (« missing-files ») et `data/sensors.csv`
+disparaît : `dvc checkout` ne cherche que dans le cache local. Avec `dvc pull`, la v1 est téléchargée depuis le
+stockage (« 1 file fetched »), on retrouve 5000 lignes, et ensuite `dvc checkout` suffit pour passer de v1 à v2.
 
 ## 4. Relier modèle et données
 
