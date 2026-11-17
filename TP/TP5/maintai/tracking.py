@@ -26,14 +26,15 @@ def file_md5(path: Path) -> str:
 
 def log_run(params: dict, metrics: dict, model, X_example, data_path: Path) -> str:
     """Enregistre un entraînement : paramètres, version des données, métriques et modèle. Renvoie l'id du run."""
-    # TODO TP5 sprint 1 : enregistrer le run dans MLflow
-    #   1. choisir l'expérience : mlflow.set_experiment(EXPERIMENT)
-    #   2. ouvrir un run :        with mlflow.start_run() as run:
-    #   3. dans le with :
-    #        - les paramètres :   mlflow.log_params(params)
-    #        - la version des données : un paramètre "data_md5", calculé par file_md5(data_path)
-    #        - les métriques :    mlflow.log_metrics(metrics)
-    #        - le modèle :        mlflow.sklearn.log_model(model, name="model", input_example=X_example,
-    #                                                      skops_trusted_types=TRUSTED_TYPES)
-    #   4. renvoyer l'identifiant : run.info.run_id
-    return ""
+    mlflow.set_experiment(EXPERIMENT)  # tous les runs de MaintAI sous le même nom
+    with mlflow.start_run() as run:  # tout ce qui est enregistré dans le with appartient au run
+        mlflow.log_params(params)
+        mlflow.log_param("data_md5", file_md5(data_path))  # la version des données, comme dans le .dvc
+        mlflow.log_metrics(metrics)
+        mlflow.sklearn.log_model(
+            model,
+            name="model",
+            input_example=X_example,
+            skops_trusted_types=TRUSTED_TYPES,
+        )
+    return run.info.run_id
