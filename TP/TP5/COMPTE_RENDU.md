@@ -256,8 +256,10 @@ Voir [`docs/adr/004-choix-du-modele.md`](docs/adr/004-choix-du-modele.md). En r�
 
 ## 7. Le rendu Git
 
-- Lien de la pull request : … (à compléter après `git push` de la branche `tp5` sur le dépôt du groupe)
-- Le tag `tp5` existe sur GitHub : non (à créer après la fusion : `git tag tp5` puis `git push --tags`)
+- Lien de la pull request : https://github.com/H20-sys/project/pull/4
+- Le tag `tp5` existe sur GitHub : oui, sur le commit de fusion de la PR #4 dans `main` (le tag `tp4` marque `main` juste avant)
+- « Files changed » de la PR : 40 fichiers, tous dans `TP/TP5` ; aucun `mlflow.db`, `mlruns/`, `data/sensors.csv`,
+  `.dvc/cache`, `.dvc/config.local`, `models/`, `dist/` ni `*.egg-info`.
 - `git status` avant le commit : `mlflow.db`, `mlruns/`, `data/sensors.csv` ou `.dvc/cache` apparaissaient-ils ? **non** :
   `mlflow.db`, `mlruns/`, `models/` et `data/*.csv` sont exclus par le `.gitignore` du TP5 ; `.dvc/cache`, `.dvc/tmp` et
   `.dvc/config.local` par le `.dvc/.gitignore` créé par `dvc init`.
