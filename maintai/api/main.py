@@ -4,8 +4,7 @@ Lancement : uvicorn maintai.api.main:app --reload
 """
 from contextlib import asynccontextmanager
 
-from fastapi import APIRouter, FastAPI, HTTPException
-from fastapi import Depends
+from fastapi import APIRouter, Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from maintai import __version__
