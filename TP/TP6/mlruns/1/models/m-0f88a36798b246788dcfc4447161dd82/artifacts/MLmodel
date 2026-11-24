@@ -1,0 +1,38 @@
+artifact_path: file:C:/Users/lenovo/Desktop/EMSI/DevAppIntelligent/TP6/mlruns/1/models/m-0f88a36798b246788dcfc4447161dd82/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.8.0
+    skops_trusted_types:
+    - sklearn.tree._tree.Tree
+is_signature_from_type_hint: false
+mlflow_version: 3.18.0
+model_id: m-0f88a36798b246788dcfc4447161dd82
+model_size_bytes: 26839
+model_uuid: m-0f88a36798b246788dcfc4447161dd82
+prompts: null
+run_id: c1e6a86a42be403699a2a705e3089891
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "temperature_c", "required": true}, {"type":
+    "double", "name": "vibration_mm_s", "required": true}, {"type": "double", "name":
+    "load_pct", "required": true}, {"type": "double", "name": "runtime_hours", "required":
+    true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-11-24 16:24:37.792347'
